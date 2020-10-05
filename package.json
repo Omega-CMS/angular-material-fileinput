@@ -1,6 +1,6 @@
 {
   "name": "omega-cms-lf-ng-md-file-input",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular material file input based on lf-ng-md-file-input",
   "main": "./dist/lf-ng-md-file-input.js",
   "scripts": {
