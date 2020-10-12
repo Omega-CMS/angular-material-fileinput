@@ -165,7 +165,7 @@
                     '<md-button aria-label="browse" ng-disabled="isDisabled" ng-click="openDialog($event, this)" class="md-raised omega-cms-lf-ng-md-file-input-button omega-cms-lf-ng-md-file-input-button-brower" ng-class="strBrowseButtonCls">',
                         '<md-icon class="lf-icon" ng-class="strBrowseIconCls"></md-icon> ',
                         '{{strCaptionBrowse}}',
-                        '<input type="file" aria-label="{{strAriaLabel}}" accept="{{accept}}" ng-disabled="isDisabled" class="omega-cms-lf-ng-md-file-input-tag" />',
+                        '<input name="{{lfInputName}}" type="file" aria-label="{{strAriaLabel}}" accept="{{accept}}" ng-disabled="isDisabled" class="omega-cms-lf-ng-md-file-input-tag" />',
                     '</md-button>',
                 '</div>',
             '</div>'
@@ -361,6 +361,7 @@
                 lfOnFileClick: '=?',
 				lfOnSubmitClick: '=?',
                 lfOnFileRemove: '=?',
+                lfInputName: '@?',
                 accept:'@?',
                 ngDisabled:'=?',
 				ngChange: '&?',
@@ -404,6 +405,10 @@
 
                 if(angular.isDefined(attrs.submit)){
                     scope.isSubmit = true;
+                }
+
+                if(!angular.isDefined(attrs.lfInputName)){
+                    scope.lfInputName = 'file-upload-' + Math.floor(Math.random() * Math.floor(999)).toString();
                 }
 
                 scope.isDisabled = false;
